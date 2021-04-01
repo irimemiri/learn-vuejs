@@ -1,4 +1,6 @@
-var outer = { message: 'Hello from outside of vue!' };
+Vue.filter('localeNum2', function(val){
+    return val.toLocaleString();
+});
 
 var app = new Vue({
     el: '#app',
@@ -8,7 +10,16 @@ var app = new Vue({
         topics: [
             { value: 'vue', name: 'Vue.js' },
             { value: 'jQuery', name: 'jQuery' }
-        ]
+        ],
+        price: 12800
+    },
+    created: function() {
+
+    },
+    filters: {
+        localeNum: function(val) {
+            return val.toLocaleString();
+        }
     },
     watch: {
         current: function(val) {
