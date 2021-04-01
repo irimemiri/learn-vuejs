@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>Vue.js App</title>
+	<link href="main.css" rel="stylesheet">	
+	</head>
+<body>
+    <div id="app" v-cloak>
+        <input v-model.number="budget"> 円以下に絞り込む
+        <input v-model.number="limit"> 件を表示
+        <p>{{ matched.length }} 件中 {{ filteredList.length }} 件を表示中</p>
+        <ul>
+            <li v-for="item in filteredList" v-bind:key="item.id">
+                {{ item.name }} {{ item.price }}円
+            </li>
+        </ul>
+        <!--
+        <input v-model="name"/>
+        <button v-on:click="addMonster">モンスターを追加！</button>
+        <ul>
+            <li v-for="(item, index) in list" v-bind:key="item.id">
+                ID.{{ item.id }} {{ item.name }} HP.{{ item.hp }}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(item, index) in list"
+                v-bind:key="item.id"
+                v-bind:class="{ tsuyoi: item.hp > 300 }"
+                v-if="item.hp">
+                ID.{{ item.id }} {{ item.name }} HP.{{ item.hp }} <span v-if="item.hp <= 50">瀕死！</span> 
+                <span v-if="item.hp > 300">つよい！</span>
+                <button v-on:click="doAttack(index)">攻撃する</button>
+                <button v-on:click="deleteMonster(index)">削除</button>
+            </li>
+        </ul> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
