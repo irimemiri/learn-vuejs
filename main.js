@@ -2,6 +2,24 @@ Vue.filter('localeNum2', function(val){
     return val.toLocaleString();
 });
 
+// var myComponent = {
+//     template: '<p>MyComponent</p>'
+// };
+
+Vue.component('my-component', {
+    template: '<p>{{ message }}</p>',
+    data: function() {
+        return {
+            message: 'Hello, Vue.js!'
+        }
+    },
+    methods: {
+        hoge: function() {
+            return 'hoge';
+        }
+    }
+});
+
 var app = new Vue({
     el: '#app',
     data: {
@@ -14,7 +32,16 @@ var app = new Vue({
         price: 12800
     },
     created: function() {
-
+    },
+    // components: {
+    //     'my-component': myComponent
+    // },
+    directives: {
+        focus: {
+            inserted: function(el) {
+                el.focus();
+            }
+        }
     },
     filters: {
         localeNum: function(val) {

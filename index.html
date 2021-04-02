@@ -7,6 +7,7 @@
     </head>
 <body>
     <div id="app">
+        <my-component></my-component>
         <p>{{ price | localeNum }}円</p>
         <p v-bind:id="price | localeNum"></p>
         <p>{{ price | localeNum2 }}円</p>
@@ -15,6 +16,7 @@
                 {{ topic.name }}
             </option>
         </select>
+        <input v-focus>
         <div v-for="item in list">{{ item.full_name }}</div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
