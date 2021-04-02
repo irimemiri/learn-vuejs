@@ -1,11 +1,13 @@
 Vue.component('comp-child', {
     template: '<li>{{ name }} HP. {{ hp }} <button v-on:click="doAttack">攻撃！</button></li>',
-    props: ['name', 'hp'],
-
+    props: {
+        id: Number,
+        name: String,
+        hp: Number
+    },
     methods: {
         doAttack: function() {
-            // 親のリアクティブデータを勝手に更新することはできない(動くけれどwarn)
-            // this.hp -= 10;
+            this.$emit('attack', this.id);
         }
     }
 });
@@ -18,5 +20,15 @@ var app = new Vue({
             { id: 2, name: 'ぶちスライム', hp: 200 },
             { id: 3, name: 'キングスライム', hp: 500 }
         ]
+    },
+    methods: {
+        handleAttack: function(id) {
+            // 最初こう書いたけどこれだとダメだった
+            // this.hp -= 10;
+            var item = this.list.find(function(el) {
+                return el.id === id;
+            });
+            if (item !== undefined && item.hp > 0) item.hp -= 10;
+        }
     }
 });
