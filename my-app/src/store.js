@@ -1,6 +1,7 @@
 import 'babel-polyfill'
 import Vue from 'vue'
 import Vuex from 'vuex'
+import product from '@/store/product.js' // モジュールをストアルートに登録
 
 // プラグイン登録
 Vue.use(Vuex)
@@ -24,6 +25,9 @@ const store = new Vuex.Store({
         doUpdate({ commit }, message) {
             commit('setMessage', { message })
         }
+    },
+    modules: {
+        product
     }
 });
 
