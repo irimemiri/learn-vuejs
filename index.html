@@ -7,13 +7,11 @@
     </head>
 <body>
     <div id="app">
-        <slot-test>
-            <header slot="header" slot-scope="props">{{props.text}}</header>
-            スロット
-        </slot-test>
-        <ul>
-            <comp-child v-for="item in list" v-bind:key="item.id" v-bind:id="item.id" v-bind:name="item.name" v-bind:hp="item.hp" v-on:attack="handleAttack"></comp-child>
-        </ul>
+        <button v-on:click="current='comp-board'">メッセージ一覧</button>
+        <button v-on:click="current='comp-form'">投稿フォーム</button>
+        <keep-alive>
+            <div v-bind:is="current"></div>
+        </keep-alive>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
