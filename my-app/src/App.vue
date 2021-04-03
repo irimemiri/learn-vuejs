@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <!-- <img src="./assets/logo.png"> -->
+    <!-- <HelloWorld/> -->
+    <p>{{ message }}</p>
+    <EditForm />
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
+import EditForm from '@/components/EditForm'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    // HelloWorld,
+    EditForm
+  },
+  created() {
+  },
+  computed: {
+    message() { return this.$store.getters.message }
   }
 }
 </script>
