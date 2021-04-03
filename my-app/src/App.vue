@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
-    <!-- <HelloWorld/> -->
-    <!-- <p>{{ message }}</p> -->
-    <!-- <EditForm /> -->
     <nav>
       <router-link to="/" exact>Home</router-link>
       <router-link to="/product">商品情報</router-link>
