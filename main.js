@@ -1,3 +1,7 @@
+Vue.component('slot-test', {
+    template: '<div class="slot-test-comp"><header><slot name="header">ヘッダーデフォルト</slot></header><p><slot>デフォルト</slot></p></div>'
+})
+
 Vue.component('comp-child', {
     template: '<li>{{ name }} HP. {{ hp }} <button v-on:click="doAttack">攻撃！</button></li>',
     props: {
@@ -22,7 +26,7 @@ var app = new Vue({
         ]
     },
     methods: {
-        handleAttack: function(id) {
+        handleAttack: function(id,e) {
             // 最初こう書いたけどこれだとダメだった
             // this.hp -= 10;
             var item = this.list.find(function(el) {
