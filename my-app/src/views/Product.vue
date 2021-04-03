@@ -2,7 +2,7 @@
   <div class="product">
     <h1>{{ detail.name }}</h1>
     <nav>
-      <router-link v-bind:to="{ name: 'product-home' }">商品詳細</router-link>
+      <router-link v-bind:to="{ name: 'product-home' }" exact>商品詳細</router-link>
       <router-link v-bind:to="{ name: 'product-review' }">レビュー</router-link>
     </nav>
     <router-view />
