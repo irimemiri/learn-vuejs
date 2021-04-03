@@ -8,7 +8,7 @@
 <body>
     <div id="app">
         <slot-test>
-            <header slot="header">スロットヘッダー</header>
+            <header slot="header" slot-scope="props">{{props.text}}</header>
             スロット
         </slot-test>
         <ul>

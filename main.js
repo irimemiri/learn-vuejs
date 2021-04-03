@@ -1,5 +1,5 @@
 Vue.component('slot-test', {
-    template: '<div class="slot-test-comp"><header><slot name="header">ヘッダーデフォルト</slot></header><p><slot>デフォルト</slot></p></div>'
+    template: '<div class="slot-test-comp"><header><slot name="header" text="hello!">ヘッダーデフォルト</slot></header><p><slot>デフォルト</slot></p></div>',
 })
 
 Vue.component('comp-child', {
