@@ -7,6 +7,20 @@
     </head>
 <body>
     <div id="app">
+        <button v-on:click="show=!show">切り替え</button>
+        <transition appear>
+            <div v-show="show">
+                トランジションさせたい要素
+            </div>
+        </transition>
+        <transition mode="in-out">
+            <div v-if="show" key="a">TRUE</div>
+            <div v-else key="b">FALSE</div>
+        </transition>
+        <button v-on:click="count++">切り替え</button>
+        <transition>
+            <div v-bind:key="count">{{ count }}</div>
+        </transition>
         <button v-on:click="current='comp-board'">メッセージ一覧</button>
         <button v-on:click="current='comp-form'">投稿フォーム</button>
         <keep-alive>

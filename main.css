@@ -1,1 +1,21 @@
 @charset 'utf-8';
+
+.v-enter-active, .v-leave-active {
+    transition: opacity 1s, transform 1s;
+}
+
+.v-leave-active {
+    position: absolute;
+}
+
+/* 表示するときは左から */
+.v-enter {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+/* 消えるときは右へ */
+.v-leave-to {
+    opacity: 0;
+    transform: translateX(10px);
+}

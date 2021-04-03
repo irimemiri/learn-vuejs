@@ -12,6 +12,8 @@ Vue.component('comp-form', {
 var app = new Vue({
     el: '#app',
     data: {
-        current: 'comp-board'
+        current: 'comp-board',
+        show: true,
+        count: 0
     }
 });
